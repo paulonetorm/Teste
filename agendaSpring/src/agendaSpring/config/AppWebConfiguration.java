@@ -11,11 +11,12 @@ import agendaSpring.controllers.HomeController;
 @ComponentScan(basePackageClasses= {HomeController.class})
 public class AppWebConfiguration {
 	
-	@Beanean
+	@Bean
 	public InternalResourceViewResolver internalResourceViewResolver() {
 		InternalResourceViewResolver Resolver = new InternalResourceViewResolver();
-		Resolver.setPrefix("/WEB_INF/views/");
+		Resolver.setPrefix("/WEB-INF/views/");
+		Resolver.setSuffix(".jsp");
 		return Resolver;
 	}
-
+	
 }
