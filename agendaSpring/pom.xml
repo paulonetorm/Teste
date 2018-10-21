@@ -24,28 +24,25 @@
       </plugin>
     </plugins>
   </build>
-  <dependencies>
+<dependencies>
 
-		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<!--https://mvnrepository.com/artifact/mysql/mysql-connector-java-->
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.43</version>
+			<groupId> mysql </groupId>
+			<artifactId> mysql-connector-java </artifactId>
+			<version> 5.1.43 </version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.glassfish.web/jstl-impl -->
+		<!--https://mvnrepository.com/artifact/org.glassfish.web/jstl-impl-->
 		<dependency>
-			<groupId>org.glassfish.web</groupId>
-			<artifactId>jstl-impl</artifactId>
-			<version>1.2</version>
+			<groupId> org.glassfish.web </groupId>
+			<artifactId> jstl-impl </artifactId>
+			<version> 1.2 </version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+		<!--https://mvnrepository.com/artifact/org.springframework/spring-webmvc-->
 		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-webmvc</artifactId>
-		    <version>4.3.19.RELEASE</version>
+			<groupId> org.springframework </groupId>
+			<artifactId> spring-webmvc </artifactId>
+			<version> 4.3.19.RELEASE </version>
 		</dependency>
-		
-
-
 	</dependencies>
 </project>
