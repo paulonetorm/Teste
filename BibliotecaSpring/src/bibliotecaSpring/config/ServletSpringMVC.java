@@ -1,6 +1,8 @@
 package bibliotecaSpring.config;
 
-import agendaSpring.config.AppWebConfiguration;
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+import bibliotecaSpring.config.AppWebConfiguration;
 
 public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletInitializer {
 

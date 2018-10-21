@@ -2,8 +2,8 @@ package bibliotecaSpring.models;
 
 import java.util.Calendar;
 
-import Atividade.daos.AlunoDAO;
-import Atividade.daos.LivroDAO;
+import bibliotecaSpring.daos.AlunoDAO;
+import bibliotecaSpring.daos.LivroDAO;
 
 public class Emprestimo {
 	public final static int DIAS_DE_DURACAO = 14;

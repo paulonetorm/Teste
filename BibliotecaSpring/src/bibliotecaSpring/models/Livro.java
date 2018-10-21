@@ -1,6 +1,6 @@
 package bibliotecaSpring.models;
 
-import Atividade.daos.EmprestimoDAO;
+import bibliotecaSpring.daos.EmprestimoDAO;
 
 public class Livro {
 	

@@ -1,11 +1,11 @@
-package BibliotecaSpring.config;
+package bibliotecaSpring.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-import agendaSpring.controllers.HomeController;
+import bibliotecaSpring.controllers.HomeController;
 
 @EnableWebMvc
 @ComponentScan(basePackageClasses= {HomeController.class})

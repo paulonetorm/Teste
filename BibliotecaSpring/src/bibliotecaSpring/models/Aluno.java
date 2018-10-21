@@ -3,7 +3,7 @@ package bibliotecaSpring.models;
 import java.util.Calendar;
 import java.util.List;
 
-import Atividade.daos.EmprestimoDAO;
+import bibliotecaSpring.daos.EmprestimoDAO;
 
 public class Aluno {
 	
