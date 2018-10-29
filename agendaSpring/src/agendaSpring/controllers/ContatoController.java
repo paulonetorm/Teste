@@ -36,5 +36,15 @@ public class ContatoController {
 		model.addObject("contatos", lista);
 		return model;
 	}
+	
+	@RequestMapping("/contatos/remover")
+	public ModelAndView remover(Contato contato) {
+		System.out.println("Chamou Remover");
+		ContatoDAO contatoDAO = new ContatoDAO();
+		contatoDAO.remover(contato);
+		return listar();
+	
+		
+	}
 
 }
