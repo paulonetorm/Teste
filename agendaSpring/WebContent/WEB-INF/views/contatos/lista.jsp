@@ -34,7 +34,7 @@
 					<td>${contato.email }</td>
 					<td>${contato.endereco }</td>
 					<td>${contato.dataNascimento.time }</td>
-					<td><a href="/agendaSpring/contatos/remover?id">Remover</a></td>
+					<td><a href="/agendaSpring/contatos/remover?id=${contato.id }">Remover</a></td>
 				</tr>
 			</c:forEach>
 
