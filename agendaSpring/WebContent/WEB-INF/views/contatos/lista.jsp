@@ -13,6 +13,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<c:import url="../menu.jsp"></c:import>
 
 
 	<h1>Lista de Contatos</h1>
