@@ -28,12 +28,12 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="contato" items="${contatos }">
+			<c:forEach var="aluno" items="${aluno }">
 				<tr>
 					<td>${aluno.matricula}</td>
 					<td>${aluno.nome}</td>
 					<td>${aluno.cpf}</td>
-					<td>${aluno.dataNascimento}</td>
+					<td>${aluno.dataNascimento.time}</td>
 					<td>${aluno.endereco}</td>
 				</tr>
 			</c:forEach>

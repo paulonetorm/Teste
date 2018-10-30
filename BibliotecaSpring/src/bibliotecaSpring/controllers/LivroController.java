@@ -25,7 +25,7 @@ public class LivroController {
 		System.out.println(livro);
 		LivroDAO livroDAO = new LivroDAO();
 		livroDAO.inserir(livro);
-		return "livro/livroOk";
+		return "livro/livroOK";
 	}
 	
 	@GetMapping("/livro") 

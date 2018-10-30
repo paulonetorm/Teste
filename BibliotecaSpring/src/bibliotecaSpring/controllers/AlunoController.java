@@ -25,7 +25,7 @@ public class AlunoController {
 		System.out.println(aluno);
 		AlunoDAO alunoDAO = new AlunoDAO();
 		alunoDAO.inserir(aluno);
-		return "aluno/alunoOk";
+		return "aluno/alunoOK";
 	}
 	
 	@GetMapping("/aluno") 

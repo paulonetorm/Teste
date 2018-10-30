@@ -3,6 +3,8 @@ package bibliotecaSpring.models;
 import java.util.Calendar;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import bibliotecaSpring.daos.EmprestimoDAO;
 
 public class Aluno {
@@ -11,6 +13,7 @@ public class Aluno {
 	private String nome;
 	private String matricula;
 	private String endereco;
+	@DateTimeFormat(pattern="dd/mm/yyyy")
 	private Calendar dataNascimento;
 	private String cpf;
 	
@@ -41,6 +44,7 @@ public class Aluno {
 	public Calendar getDataNascimento() {
 		return dataNascimento;
 	}
+
 	public void setDataNascimento(Calendar dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
@@ -50,21 +54,26 @@ public class Aluno {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public List<Emprestimo> getEmprestimos() {
-		return new EmprestimoDAO().getListaByAluno(this);
-		
-	}
-	public boolean Situacao() {
-		for(Emprestimo emprestimo : this.getEmprestimos()) {
-			if(!emprestimo.Situacao()) {
-				return emprestimo.Situacao();
-			}
-			
-		}
-		return true;
-	}
+//	public List<Emprestimo> getEmprestimos() {
+//		return new EmprestimoDAO().getListaByAluno(this);
+//		
+//	}
+//	
+//	public boolean Situacao() {
+//		for(Emprestimo emprestimo : this.getEmprestimos()) {
+//			if(!emprestimo.Situacao()) {
+//				return emprestimo.Situacao();
+//			}
+//			
+//		}
+//		return true;
+//	}
 
-	
+	@Override
+	public String toString() {
+		return "Aluno [id=" + id + ", nome=" + nome + ", matricula=" + matricula + ", endereco=" + endereco
+				+ ", dataNascimento=" + dataNascimento + ", cpf=" + cpf + "]";
+	}
 
 
 }

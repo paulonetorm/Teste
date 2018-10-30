@@ -20,7 +20,7 @@ public class AlunoDAO {
 
 	public boolean inserir(Aluno aluno) {
 
-		String sql = "insert into contatos (nome, matricula, endereco, dataNascimento, cpf) values (?, ?, ?, ?, ?);";
+		String sql = "insert into aluno (nome, matricula, endereco, dataNascimento, cpf) values (?, ?, ?, ?, ?);";
 
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);
@@ -48,7 +48,7 @@ public class AlunoDAO {
 		List<Aluno> result = new ArrayList<>();
 
 		try {
-			PreparedStatement stmt = this.connection.prepareStatement("select * from contatos;");
+			PreparedStatement stmt = this.connection.prepareStatement("select * from aluno;");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
@@ -78,7 +78,7 @@ public class AlunoDAO {
 	}
 
 	public boolean alterar(Aluno aluno) {
-		String sql = "update contatos set nome=?, email=?, endereco=?, dataNascimento=? where id=?;";
+		String sql = "update aluno set nome=?, email=?, endereco=?, dataNascimento=? where id=?;";
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, aluno.getNome());
@@ -98,7 +98,7 @@ public class AlunoDAO {
 
 	public boolean remover(Aluno aluno) {
 		try {
-			PreparedStatement stmt = connection.prepareStatement("delete from contatos where id=?;");
+			PreparedStatement stmt = connection.prepareStatement("delete from aluno where id=?;");
 			stmt.setLong(1, aluno.getId());
 			stmt.execute();
 			stmt.close();
@@ -140,7 +140,7 @@ public class AlunoDAO {
 		Aluno result = null;
 
 		try {
-			PreparedStatement stmt = this.connection.prepareStatement("select * from contatos where id = ?;");
+			PreparedStatement stmt = this.connection.prepareStatement("select * from aluno where id = ?;");
 			stmt.setLong(1, id);
 			ResultSet rs = stmt.executeQuery();
 
