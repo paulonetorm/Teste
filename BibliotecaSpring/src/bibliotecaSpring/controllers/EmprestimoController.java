@@ -8,16 +8,26 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import bibliotecaSpring.daos.AlunoDAO;
 import bibliotecaSpring.daos.EmprestimoDAO;
+import bibliotecaSpring.daos.LivroDAO;
+import bibliotecaSpring.models.Aluno;
 import bibliotecaSpring.models.Emprestimo;
+import bibliotecaSpring.models.Livro;
 
 @Controller
 public class EmprestimoController {
 	
 	@RequestMapping("/emprestimo/formE")
-	public String form() {
-		System.out.println("Chamou o formE emprestimo");
-		return "emprestimo/formE";
+	public ModelAndView listarAL() {
+		AlunoDAO alunoDAO = new AlunoDAO();
+		LivroDAO livroDAO = new LivroDAO();
+		List<Aluno> listaA = alunoDAO.getLista();
+		List<Livro> listaL = livroDAO.getLista();
+		ModelAndView model = new ModelAndView("emprestimo/formE");
+		model.addObject("alunos", listaA);
+		model.addObject("livros", listaL);
+		return model;
 	}
 	
 	@PostMapping("/emprestimo")
