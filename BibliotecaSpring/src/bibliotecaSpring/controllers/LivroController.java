@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import bibliotecaSpring.daos.AlunoDAO;
 import bibliotecaSpring.daos.LivroDAO;
+import bibliotecaSpring.models.Aluno;
 import bibliotecaSpring.models.Livro;
 
 @Controller
@@ -25,7 +27,7 @@ public class LivroController {
 		System.out.println(livro);
 		LivroDAO livroDAO = new LivroDAO();
 		livroDAO.inserir(livro);
-		return "livro/livroOK";
+		return "redirect:livro";
 	}
 	
 	@GetMapping("/livro") 
@@ -35,6 +37,14 @@ public class LivroController {
 		ModelAndView model = new ModelAndView("livro/listaL");
 		model.addObject("livro", lista);
 		return model;
+	}
+	
+	@RequestMapping("/livro/remover")
+	public String remover(Livro livro) {
+		System.out.println("Chamou o metodo remover livro");
+		LivroDAO livroDAO = new LivroDAO();
+		livroDAO.remover(livro);
+		return "redirect:../livro/";
 	}
 
 }

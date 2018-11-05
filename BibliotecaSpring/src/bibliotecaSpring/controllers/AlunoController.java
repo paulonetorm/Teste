@@ -25,7 +25,7 @@ public class AlunoController {
 		System.out.println(aluno);
 		AlunoDAO alunoDAO = new AlunoDAO();
 		alunoDAO.inserir(aluno);
-		return "aluno/alunoOK";
+		return "redirect:aluno";
 	}
 	
 	@GetMapping("/aluno") 
@@ -35,6 +35,14 @@ public class AlunoController {
 		ModelAndView model = new ModelAndView("aluno/listaA");
 		model.addObject("aluno", lista);
 		return model;
+	}
+	
+	@RequestMapping("/aluno/remover")
+	public String remover(Aluno aluno) {
+		System.out.println("Chamou o metodo remover aluno");
+		AlunoDAO alunoDAO = new AlunoDAO();
+		alunoDAO.remover(aluno);
+		return "redirect:../aluno/";
 	}
 
 }

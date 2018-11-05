@@ -14,7 +14,7 @@
 </head>
 <body>
 
-
+	<c:import url="../menu.jsp"></c:import>
 	<h1>Lista de Livros</h1>
 
 	<table border="1">
@@ -35,6 +35,7 @@
 					<td>${livro.editora}</td>
 					<td>${livro.anoPublicacao}</td>
 					<td>${livro.edicao}</td>
+					<td><a href="/BibliotecaSpring/livro/remover?id=${livro.id }">Remover</a></td>
 				</tr>
 			</c:forEach>
 
