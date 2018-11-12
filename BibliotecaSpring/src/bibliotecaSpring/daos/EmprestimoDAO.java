@@ -48,7 +48,7 @@ public class EmprestimoDAO  {
 
 	public boolean inserir(Emprestimo emprestimos) {
 
-		String sql = "insert into emprestimo (mat_aluno, id_livro, dataEmprestimo, dataDevolucao) values (?, ?, ?, ?);";
+		String sql = "insert into emprestimo (id, livro, aluno, dataEmprestimo,) values (?, ?, ?,?);";
 
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);
