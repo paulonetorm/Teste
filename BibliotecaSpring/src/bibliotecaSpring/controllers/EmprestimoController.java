@@ -1,5 +1,6 @@
 package bibliotecaSpring.controllers;
 
+import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -32,10 +33,11 @@ public class EmprestimoController {
 	
 	@PostMapping("/emprestimo")
 	public String adicionar(Emprestimo emprestimo) {
+		emprestimo.setDataEmprestimo(Calendar.getInstance());
 		System.out.println(emprestimo);
 		EmprestimoDAO emprestimoDAO = new EmprestimoDAO();
 		emprestimoDAO.inserir(emprestimo);
-		return "emprestimo/emprestimoOk";
+		return "redirect:emprestimo";
 	}
 	
 	@GetMapping("/emprestimo") 

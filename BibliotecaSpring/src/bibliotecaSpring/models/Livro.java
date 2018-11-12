@@ -47,17 +47,17 @@ public class Livro {
 	public void setEdicao(String edicao) {
 		this.edicao = edicao;
 	}
-	public boolean estaDisponivel() {
-		try {
-			if (new EmprestimoDAO().getListaByLivro(this).isEmpty() || new EmprestimoDAO().getListaByLivro(this).size() == 0) {
-				return true;
-		} else {
-			return false;
-		}
-	} catch (Exception e) {
-		return true;
-	}
-	}
+//	public boolean estaDisponivel() {
+//		try {
+//			if (new EmprestimoDAO().getListaByLivro(this).isEmpty() || new EmprestimoDAO().getListaByLivro(this).size() == 0) {
+//				return true;
+//		} else {
+//			return false;
+//		}
+//	} catch (Exception e) {
+//		return true;
+//	}
+//	}
 }
 	
 
