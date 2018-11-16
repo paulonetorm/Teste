@@ -13,15 +13,15 @@
 		<form action="/BibliotecaSpring/emprestimo" method="post">
 		<div>
 			<label>Matricula:</label> 
-			<select name="aluno.matricula">
-			<c:forEach var="aluno" items="${alunos }">
-  				<option value="${aluno.matricula}">${aluno.matricula} - ${aluno.nome}</option>  				
-  			</c:forEach>
+			<select name="aluno.id">
+				<c:forEach var="aluno" items="${alunos }">
+					<option value="${aluno.id }">${aluno.nome }</option>
+				</c:forEach>
 			</select>
 			<select name="livro.id">
 				<c:forEach var="livro" items="${livros }">
-  					<option value="${livro.id}">${livro.titulo} - ${livro.editora}</option> 
-  				</c:forEach>
+					<option value="${livro.id }">${livro.titulo }</option>
+				</c:forEach>
 			</select>
 		</div>
 			<button type="submit">Adicionar</button>

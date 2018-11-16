@@ -32,12 +32,11 @@ public class EmprestimoController {
 	}
 	
 	@PostMapping("/emprestimo")
-	public String adicionar(Emprestimo emprestimo) {
-		emprestimo.setDataEmprestimo(Calendar.getInstance());
-		System.out.println(emprestimo);
+	public String inserir(Emprestimo emprestimo) {
+		System.out.println("Chamou o método de adicionar");
 		EmprestimoDAO emprestimoDAO = new EmprestimoDAO();
 		emprestimoDAO.inserir(emprestimo);
-		return "redirect:emprestimo";
+		return "redirect:/emprestimo";
 	}
 	
 	@GetMapping("/emprestimo") 
