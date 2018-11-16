@@ -28,14 +28,9 @@
 					<td>${emprestimo.aluno.nome}</td>
 					<td>${emprestimo.livro.titulo}</td>
 					<td><fmt:formatDate value="${emprestimo.dataEmprestimo.time}" pattern="dd/MM/yyyy" /></td>
-					<c:if test="${empty emprestimo.dataDevolucao}">
-							<td>
-								<form method="POST" action="/BibliotecaSpring/emprestimo/devolucao"> 
-									<input type="hidden" name="alunoID" value="${emprestimo.aluno.id}"/>
-									<input type="hidden" name="livroID" value="${emprestimo.livro.id}"/>
-								</form>
-							</td>
-						</c:if>
+					<td><fmt:formatDate value="${emprestimo.dataDevolucao.time}" pattern="dd/MM/yyyy" /></td>
+					<td><a href="/BibliotecaSpring/emprestimo/devolucao?id=${emprestimo.id} ">Devolver</a></td>
+					
 				</tr>
 			</c:forEach>
 

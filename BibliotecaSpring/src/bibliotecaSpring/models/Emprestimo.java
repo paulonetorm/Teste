@@ -2,10 +2,23 @@ package bibliotecaSpring.models;
 
 import java.util.Calendar;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Emprestimo {
+	private long id;
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	private Aluno aluno;
 	private Livro livro;
+	@DateTimeFormat(pattern="dd/mm/yyyy")
 	Calendar dataEmprestimo;
+	@DateTimeFormat(pattern="dd/mm/yyyy")
 	Calendar dataDevolucao;
 
 	public Calendar getDataEmprestimo() {
@@ -42,7 +55,7 @@ public class Emprestimo {
 
 	@Override
 	public String toString() {
-		return "Emprestimo [aluno=" + aluno + ", livro=" + livro + ", dataEmprestimo=" + dataEmprestimo
+		return "Emprestimo [id=" + id + ", aluno=" + aluno + ", livro=" + livro + ", dataEmprestimo=" + dataEmprestimo
 				+ ", dataDevolucao=" + dataDevolucao + "]";
 	}
 	

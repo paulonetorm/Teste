@@ -4,17 +4,17 @@ import bibliotecaSpring.daos.EmprestimoDAO;
 
 public class Livro {
 	
-	private long id;
+	private Long id;
 	private String titulo;
 	private String autor;
 	private String editora;
 	private int anoPublicacao;
 	private String edicao;
 	
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getTitulo() {

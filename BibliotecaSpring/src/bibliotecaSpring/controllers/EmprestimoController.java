@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+
 import bibliotecaSpring.daos.AlunoDAO;
 import bibliotecaSpring.daos.EmprestimoDAO;
 import bibliotecaSpring.daos.LivroDAO;
@@ -48,4 +49,13 @@ public class EmprestimoController {
 		return model;
 	}
 
+	@RequestMapping("/emprestimo/devolucao")
+	public String devolver(Long id) {
+		System.out.println("Chamou devolver");
+		EmprestimoDAO emprestimoDAO = new EmprestimoDAO();
+		Emprestimo e = emprestimoDAO.getEmprestimoByID(id);
+		
+		emprestimoDAO.devolucao(e);
+		return "redirect:../emprestimo/";
+}
 }

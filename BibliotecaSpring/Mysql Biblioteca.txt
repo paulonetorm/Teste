@@ -1,0 +1,37 @@
+mysql> create database biblioteca;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use biblioteca;
+Database changed
+
+mysql> create table livro (
+    -> id bigint not null auto_increment,
+    -> titulo varchar (255),
+    -> autor varchar (255),
+    -> editora varchar (255),
+    -> anoPublicacao int,
+    -> edicao int,
+    -> primary key (id)
+    -> );
+Query OK, 0 rows affected (0.17 sec)
+
+mysql> create table aluno (
+    -> id bigint not null auto_increment,
+    -> matricula varchar (15),
+    -> nome varchar (255),
+    -> cpf varchar (11),
+    -> dataNascimento date,
+    -> endereco varchar (255),
+    -> primary key (id)
+    -> );
+Query OK, 0 rows affected (0.11 sec)
+
+mysql> create table emprestimo (
+	-> id bigint not null auto_increment,
+    -> livroID mediumtext,
+    -> alunoID mediumtext,
+    -> dataEmprestimo date,
+    -> dataDevolucao date,
+    -> primary key (id)
+    -> );
+Query OK, 0 rows affected (0.16 sec)

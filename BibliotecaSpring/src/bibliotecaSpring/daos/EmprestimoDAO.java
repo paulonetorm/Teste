@@ -218,12 +218,21 @@ public class EmprestimoDAO {
 		try {
 
 			Emprestimo emprestimo = null;
+			AlunoDAO aDAO = new AlunoDAO();
+			LivroDAO lDAO = new LivroDAO();
 			PreparedStatement stmt = this.connection.prepareStatement("select * from emprestimo where id=?;");
 			stmt.setLong(1, id);
 			ResultSet rs = stmt.executeQuery();
+			emprestimo.setAluno(aDAO.getById(rs.getLong("alunoID")));
+			emprestimo.setLivro(lDAO.getById(rs.getLong("livroID")));
 			
-			while (rs.next()) {
-				emprestimo = formacaoEmprestimo(rs);
+			Calendar data = Calendar.getInstance();
+			data.setTime(rs.getDate("dataEmprestimo"));
+			emprestimo.setDataEmprestimo(data);
+			
+			if(rs.getDate("dataDevolucao") != null) {
+				data.setTime(rs.getDate("dataDevolucao"));
+				emprestimo.setDataEmprestimo(data);
 			}
 			rs.close();
 			stmt.close();

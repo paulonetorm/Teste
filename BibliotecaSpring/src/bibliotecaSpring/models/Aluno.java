@@ -9,7 +9,7 @@ import bibliotecaSpring.daos.EmprestimoDAO;
 
 public class Aluno {
 	
-	private long id;
+	private Long id;
 	private String nome;
 	private String matricula;
 	private String endereco;
@@ -17,10 +17,10 @@ public class Aluno {
 	private Calendar dataNascimento;
 	private String cpf;
 	
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getNome() {
